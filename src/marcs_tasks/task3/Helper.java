@@ -5,7 +5,7 @@ import java.util.List;
 
 import marcs_tasks.task1.Pair;
 
-public class PairHelper {
+public class Helper {
 	public Pair<String, List<String>> getMostOccurableLetterAndContainingList (String string) {
 		StringHelper stringHelper = new StringHelper();
 		

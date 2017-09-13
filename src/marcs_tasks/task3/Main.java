@@ -7,11 +7,11 @@ import marcs_tasks.task1.Pair;
 public class Main {
 
 	public static void main(String[] args) {
-		PairHelper pairHelper = new PairHelper();
+		Helper helper = new Helper();
 		
 		String string = "Grisha maninca pirjoale zi de zi. El inca iubeste sa bea bere";
 		
-		Pair<String, List<String>> pair = pairHelper.getMostOccurableLetterAndContainingList(string);
+		Pair<String, List<String>> pair = helper.getMostOccurableLetterAndContainingList(string);
 		
 		System.out.println("Most occured letter: " + pair.getA());
 		printWords(pair.getB());
