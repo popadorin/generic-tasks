@@ -2,39 +2,24 @@ package marcs_tasks.task3;
 
 public class StringHelper {
 
-	public String getMostOccuringLetter(String str) {
-		int temp = 0;
-	    int count = 0;
-	    char[] letters = {'a','b' , 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
-	    int[] numChar = new int[26];
-	    char letter;
-	    String s = "";
-	    str = str.toLowerCase();
-	    for (int i = 0; i < 26; i++) {
-	        count = 0;
-	        for (int j = 0; j < str.length(); j++) {
-	            letter = str.charAt(j);
-	            if (letters[i] == letter) {
-	                count++;
-	            }
-	        }
-	        numChar[i] = count++;
-	    }
-	    temp = numChar[0];
+	public String getMostOccurredLetter(String string) {
+		char mostOccurredChar = ' ';
+        	int counter = 0;
+        	int[] charsOccurrences = new int[Character.MAX_VALUE + 1];
+	
+	        for (int i = 0 ; i < s.length() ; i++) {
+       		    char ch = string.charAt(i);
+		    if (!Character.isLetter(ch)) {
+                        continue;
+            	    }
 
-	    for (int i = 1; i < numChar.length; i++) {
-	        if (temp < numChar[i]) {
-	            temp = numChar[i];
-	            break;
-	        }
-	    }
-	    
-        for (int c = 0; c < 26; c++) {
-            if (numChar[c] == temp)
-            s = "" + letters[c];
-        }
+	            charsOccurrences[ch]++ ;
+        	    if (charsOccurrences[ch] >= counter) {
+                	counter = charsOccurrences[ch];
+            	    	mostOccurredChar = ch;
+            	    }
+        	}
 
-	    return s;
-
+	        return String.valueOf(mostOccurredChar);
 	}
 }
